@@ -25,11 +25,11 @@ public class AppTomcat {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(9090);
         //读取项目路径
-        StandardContext context = (StandardContext)tomcat.addWebapp("/", new File("C:\\Users\\wangqiang\\Desktop\\code\\springboot-mvc\\src\\main").getAbsolutePath());
+        StandardContext context = (StandardContext)tomcat.addWebapp("/", new File("src/main").getAbsolutePath());
         //禁止重新载入
         context.setReloadable(false);
         //class 文件读取地址
-        File file = new File("C:\\Users\\wangqiang\\Desktop\\code\\springboot-mvc\\target\\classes");
+        File file = new File("target/classes");
         //创建webroot
         WebResourceRoot standardRoot = new StandardRoot(context);
         //tomcat内部读取class执行
